@@ -1,0 +1,3 @@
+C:/Users/Krzysztof/Desktop/AiSD/List1/Ex2/cmake-build-debug/CMakeFiles/SLL.dir
+C:/Users/Krzysztof/Desktop/AiSD/List1/Ex2/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/Krzysztof/Desktop/AiSD/List1/Ex2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
