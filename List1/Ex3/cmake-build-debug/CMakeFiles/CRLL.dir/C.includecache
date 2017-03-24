@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Krzysztof/Desktop/AiSD/List1/Ex3/circularDoublyLinkedList.c
+stdio.h
+-
+stdlib.h
+-
+time.h
+-
+windows.h
+-
+
