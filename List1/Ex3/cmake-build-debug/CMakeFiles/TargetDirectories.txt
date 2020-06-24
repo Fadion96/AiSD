@@ -1,3 +1,0 @@
-C:/Users/Krzysztof/Desktop/AiSD/List1/Ex3/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Krzysztof/Desktop/AiSD/List1/Ex3/cmake-build-debug/CMakeFiles/CRLL.dir
-C:/Users/Krzysztof/Desktop/AiSD/List1/Ex3/cmake-build-debug/CMakeFiles/rebuild_cache.dir

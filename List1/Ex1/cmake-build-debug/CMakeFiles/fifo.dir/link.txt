@@ -1,3 +1,0 @@
-"C:\Program Files (x86)\JetBrains\CLion 2016.3.3\bin\cmake\bin\cmake.exe" -E remove -f CMakeFiles\fifo.dir/objects.a
-C:\MinGW\bin\ar.exe cr CMakeFiles\fifo.dir/objects.a @CMakeFiles\fifo.dir\objects1.rsp
-C:\MinGW\bin\gcc.exe  -g   -Wl,--whole-archive CMakeFiles\fifo.dir/objects.a -Wl,--no-whole-archive  -o fifo.exe -Wl,--out-implib,libfifo.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\fifo.dir\linklibs.rsp

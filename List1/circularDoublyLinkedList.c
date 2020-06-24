@@ -1,8 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <windows.h>
 
+#ifdef _WIN32
+#include <windows.h>
+#else
+#include <sys/time.h>
+#endif
 
 typedef struct LIST{
     struct LIST *next;
@@ -119,7 +123,11 @@ LIST *get (LIST **head,int x, int size){
 }
 
 void avgtime (LIST *head, int n){
-    SYSTEMTIME timer;
+    #ifdef _WIN32
+        SYSTEMTIME timer;
+    #else
+        struct timeval timer;
+    #endif
     int start;
     int end;
     int sizeL = size(&head);
@@ -127,15 +135,32 @@ void avgtime (LIST *head, int n){
     double avg = 0;
 
     for (int i=1;i<=10000;i++){
-        GetSystemTime(&timer);
-        start = (timer.wSecond * 1000) + timer.wMilliseconds;
+        #ifdef _WIN32
+            GetSystemTime(&timer);
+            start = (timer.wSecond * 1000) + timer.wMilliseconds;
+        #else
+            gettimeofday(&timer, NULL);
+            start = (timer.tv_sec * 1000000) + timer.tv_usec;
+        #endif
+
         LIST *x = get(&head,n,sizeL);
-        GetSystemTime(&timer);
-        end = (timer.wSecond * 1000) + timer.wMilliseconds;
+
+        #ifdef _WIN32
+            GetSystemTime(&timer);
+            end = (timer.wSecond * 1000) + timer.wMilliseconds;
+        #else
+            gettimeofday(&timer, NULL);
+            end = (timer.tv_sec * 1000000) + timer.tv_usec;
+        #endif
+
         sum = sum + (end - start);
     }
     avg = sum/10000.0;
-    printf("Avg time for n = %d : %f (in miliseconds)\n",n,avg);
+    #ifdef _WIN32
+        printf("Avg time for n = %d : %f (in miliseconds)\n",n,avg);
+    #else
+        printf("Avg time for n = %d : %f (in microseconds)\n",n,avg);
+    #endif
 }
 
 int main() {
